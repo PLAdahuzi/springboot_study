@@ -1,0 +1,43 @@
+spring:
+  redis:
+    host: 192.168.159.128
+    port: 6379
+    password: dahuzi
+    timeout: 10000
+    database: 0
+    # 连接池配置
+    pool:
+      # 最大建立连接的等待时间
+      max-wait: 10000
+      # 最小空闲数
+      min-idle: 5
+      # 最大活动数
+      max-active: 10
+      # 最大空闲数
+      max-idle: 20
+      # 一个连接池最大可分配多少个连接实例
+      maxTotal: 100
+      # 连接最小空闲时间
+      # 如果要连接池只根据softMinEvictableIdleTimeMillis进程逐出，那么需要将minEvictableIdleTimeMillis设置为负数（即最大值）;
+      # 如果要连接池只根据minEvictableIdleTimeMillis进程逐出，那么需要将softMinEvictableIdleTimeMillis设置为负数（即最大值），理论上设置minIdle很大也是可以的，但是实际上不行
+      min-evictable-idle-time: 1800000
+      # 每次释放连接的最大数目
+      num-tests-per-eviction-run: 3
+      # 逐出扫描的时间间隔(毫秒) 如果为负数,则不运行逐出线程, 默认-1
+      time-between-eviction-runs-millis: 30000
+      # 是否从连接池中去除连接时进行检查,如果检验失败,则从池中去除连接并尝试取出另一个
+      test-on-borrow: true
+      # 在空闲时检查有效性
+      test-while-idle: true
+      # 在连接对象创建时测试连接对象的有效性
+      test-on-create: true
+      # 在连接对象返回时，是否测试对象的有效性
+      test-on-return: false
+      # 当池中的资源耗尽时是否进行阻塞,设置false直接报错,true表示会一直等待，直到有可用资源
+      block-when-exhausted: true
+      # 设置是否启用jmx
+      jmx-enabled: true
+      #设置JMX基础名
+      jmx-name-base: dahuzi
+      # 设置JMX前缀名,默认值pool
+      jmx-name-prefix: pool
