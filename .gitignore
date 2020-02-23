@@ -29,3 +29,10 @@ build/
 
 ### VS Code ###
 .vscode/
+.idea
+.mvn
+target
+mvnw
+mvnw.cmd
+springboot_study.iml
+target
